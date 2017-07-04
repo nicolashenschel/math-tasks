@@ -1,14 +1,14 @@
 .SimpleArithmeticalProblemInput {
   background: #fff;
   border: 1px solid #999;
-  float: left;
-  font-size: 24px;
-  font-weight: bold;
-  line-height: 34px;
-  height: 34px;
-  margin-right: -1px;
-  margin-top: -1px;
-  padding: 0;
-  text-align: center;
-  width: 34px;
+  float: right;
+  xfont-size: 24px;
+  xfont-weight: bold;
+  xline-height: 34px;
+  xheight: 34px;
+  xmargin-right: -1px;
+  xmargin-top: -1px;
+  xpadding: 0;
+  xtext-align: center;
+  width: 50px;
 }
