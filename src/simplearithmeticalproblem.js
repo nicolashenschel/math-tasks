@@ -5,10 +5,11 @@ class SimpleArithmeticalProblem extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      value1: 10,
-      value2: 5,
-      value: 0
+      value1: randomNumber(),
+      value2: randomNumber(),
+      value: ''
     }
+
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -20,15 +21,21 @@ class SimpleArithmeticalProblem extends React.Component {
   }
 
   handleNewTask (event) {
-    this.setState({value1: randomIntFromInterval(1, 10)})
-    this.setState({value2: randomIntFromInterval(1, 10)})
+    this.setState({value: ''})
+    this.setState({value1: randomNumber()})
+    this.setState({value2: randomNumber()})
   }
 
   handleSubmit (event) {
     // todo: why is === not working?
-    const result = this.state.value1 + this.state.value2 == this.state.value ? 'Rigtigt' : 'Forkert'
+    let result = 'Forkert'
 
-    alert(result + ': ' + this.state.value)
+    if (this.state.value1 + this.state.value2 == this.state.value) {
+      result = 'Rigtigt'
+      this.handleNewTask(event)
+    }
+
+    alert(result)
     event.preventDefault()
   }
 
@@ -49,7 +56,7 @@ class SimpleArithmeticalProblem extends React.Component {
             <tr>
               <td></td>
               <td>
-                <input className="SimpleArithmeticalProblemInput" type="number" value={this.state.value} onChange={this.handleChange} />
+                <input className="SimpleArithmeticalProblemInput" pattern="[0-9]*" type="text" value={this.state.value} onChange={this.handleChange} />
               </td>
             </tr>
           </table>
@@ -62,8 +69,11 @@ class SimpleArithmeticalProblem extends React.Component {
   }
 }
 
-function randomIntFromInterval(min, max) {
+function randomIntFromInterval (min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min)
+}
+function randomNumber () {
+  return randomIntFromInterval(1, 10)
 }
 
 export default SimpleArithmeticalProblem
