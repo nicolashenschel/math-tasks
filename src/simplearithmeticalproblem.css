@@ -20,3 +20,7 @@ table {
 td {
   text-align: right;
 }
+
+w3-round-xlarge {
+  border-radius: 16px
+}
