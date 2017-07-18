@@ -4,8 +4,8 @@ import ReactDOM from 'react-dom'
 // import EssayForm from './essayform.js'
 import SimpleArithmeticalProblem from './simplearithmeticalproblem'
 
-class MathPlayGround extends React.Component{
-  render() {
+class MathPlayGround extends React.Component {
+  render () {
     return (
       <div>
         <SimpleArithmeticalProblem />
