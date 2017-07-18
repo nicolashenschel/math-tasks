@@ -32,7 +32,6 @@ class SimpleArithmeticalProblem extends React.Component {
   handleSubmit (event) {
     // todo: why is === not working?
     if (this.state.value1 + this.state.value2 == this.state.value) {
-
       if (this.state.answeredQuestions + 1 === this.state.numberOfQuestions) {
         this.setState({answeredQuestions: 0})
         alert('Flot!')
@@ -51,7 +50,7 @@ class SimpleArithmeticalProblem extends React.Component {
       <div>
         <form onSubmit={this.handleSubmit}>
         Opgave:
-          <table>
+          <table id="rcorners2">
             <tbody>
               <tr>
                 <td></td>
@@ -69,10 +68,9 @@ class SimpleArithmeticalProblem extends React.Component {
               </tr>
             </tbody>
           </table>
-          <input type="submit" value="Resultat" />
+          <input className="button" type="submit" value="Resultat" />
+          <input className="button button2" type="button" onClick={this.handleNewTask} value="Ny opgave" />
         </form>
-        <input type="button" onClick={this.handleNewTask} value="Ny opgave" />
-        {/* <ProgressBar /> */}
         <div className="w3-light-grey w3-round-xlarge">
           <div className="w3-container w3-blue w3-round-xlarge" style={myStyle}>{procentCompleted}</div>
         </div>
