@@ -1,4 +1,5 @@
 import React from 'react'
+import DropDown from './dropdown'
 import './simplearithmeticalproblem.css'
 import './w3.css'
 
@@ -57,8 +58,9 @@ class SimpleArithmeticalProblem extends React.Component {
     let myStyle = { width: Math.round(this.state.answeredQuestions / this.state.numberOfQuestions * 100) + '%' }
     return (
       <div>
-        <h1>Opgave</h1>
-        <form onSubmit={this.handleSubmit}>
+            <h1>Hej {this.props.name}!</h1>
+	    <h2>Opgave</h2>
+            <form onSubmit={this.handleSubmit}>
           <table id="rcorners2">
             <tbody>
               <tr>
@@ -82,15 +84,8 @@ class SimpleArithmeticalProblem extends React.Component {
         </form>
         <div className="w3-light-grey w3-round-xlarge">
           <div className="w3-container w3-blue w3-round-xlarge" style={myStyle}>{procentCompleted}</div>
-        </div>
-        <div className="w3-dropdown-click">
-          <select className="w3-button w3-bar-block w3-border w3-dropdown-hover" onChange={this.handleLevelChange}>
-            <option className="w3-dropdown-click" value="8" >Tal: 1-8</option>
-            <option className="w3-dropdown-click" value="10">Tal: 1-10</option>
-            <option className="w3-dropdown-click" value="15">Tal: 1-15</option>
-            <option className="w3-dropdown-click" value="20">Tal: 1-20</option>
-          </select>
-        </div>
+            </div>
+	    <DropDown onChange={this.handleLevelChange}/>
       </div>
     )
   }

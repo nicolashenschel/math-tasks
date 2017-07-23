@@ -8,7 +8,7 @@ class MathPlayGround extends React.Component {
   render () {
     return (
       <div>
-        <SimpleArithmeticalProblem />
+        <SimpleArithmeticalProblem name="Nicolas"/>
       </div>
     )
   }
