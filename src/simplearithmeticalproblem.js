@@ -36,7 +36,6 @@ class SimpleArithmeticalProblem extends React.Component {
   }
 
   handleLevelChange (event) {
-    //  alert(event.target.value)
     let newMax
     switch (parseInt(event.target.value, 10)) {
       case 0:
@@ -54,7 +53,8 @@ class SimpleArithmeticalProblem extends React.Component {
       default:
         newMax = 8
     }
-    this.setState({maxValue: newMax})
+      this.setState({maxValue: newMax})
+      this.handleNewTask(event)
   }
 
   handleSubmit (event) {
