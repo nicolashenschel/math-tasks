@@ -43,16 +43,16 @@ class SimpleArithmeticalProblem extends React.Component {
         newMax = 8
         break
       case 1:
-	     newMax = 10
-	  break
+        newMax = 10
+        break
       case 2:
-	  newMax = 15
-	  break
+        newMax = 15
+        break
       case 3:
-	  newMax = 20
-	  break
+        newMax = 20
+        break
       default:
-	  newMax = 8
+        newMax = 8
     }
     this.setState({maxValue: newMax})
   }
@@ -73,13 +73,12 @@ class SimpleArithmeticalProblem extends React.Component {
 
   render () {
     let elements = ['Tal: 1-8', 'Tal: 1-10', 'Tal: 1-15', 'Tal: 1-20']
-    alert ("elememts: " + elements.length)
     let procentCompleted = this.state.numberOfQuestions + '/' + this.state.answeredQuestions
     let myStyle = { width: Math.round(this.state.answeredQuestions / this.state.numberOfQuestions * 100) + '%' }
     return (
       <div>
         <h1>Hej {this.props.name}!</h1>
-	    <h2>Opgave</h2>
+        <h2>Opgave</h2>
         <form onSubmit={this.handleSubmit}>
           <table id="rcorners2">
             <tbody>
@@ -105,7 +104,7 @@ class SimpleArithmeticalProblem extends React.Component {
         <div className="w3-light-grey w3-round-xlarge">
           <div className="w3-container w3-blue w3-round-xlarge" style={myStyle}>{procentCompleted}</div>
         </div>
-	    <DropDown elements={elements} onChange={this.handleLevelChange}/>
+        <DropDown elements={elements} onChange={this.handleLevelChange}/>
       </div>
     )
   }
