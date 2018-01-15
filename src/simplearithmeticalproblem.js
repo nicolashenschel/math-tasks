@@ -77,8 +77,7 @@ class SimpleArithmeticalProblem extends React.Component {
     let myStyle = { width: Math.round(this.state.answeredQuestions / this.state.numberOfQuestions * 100) + '%' }
     return (
       <div>
-        <h1>Hej {this.props.name}!</h1>
-        <h2>Opgave</h2>
+        <h1>Opgave</h1>
         <form onSubmit={this.handleSubmit}>
           <table id="rcorners2">
             <tbody>
